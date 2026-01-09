@@ -1,0 +1,115 @@
+# Environment Variables (NEVER COMMIT)
+.env
+.env.local
+.env.*.local
+
+# Credentials & Secrets
+*.key
+*.pem
+secrets.json
+credentials.json
+token.txt
+API_KEYS.txt
+
+# Model Files (Large)
+*.bin
+*.safetensors
+model_weights/
+checkpoints/
+merged_nsfw_rp_34b/
+nsfw_adapter_final/
+nsfw_finetuned_merged/
+
+# Datasets
+*.json
+custom_sexting_dataset*.json
+lmsys-chat-lewd-filter.prompts.json
+merged_dataset.json
+!merge_config.yaml  # KEEP this
+
+# Cache & Temporary
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.project
+.pydevproject
+.settings/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+*.ipynb
+!nsfw_chatbot_production_v2.ipynb  # KEEP main notebook
+
+# Logs
+*.log
+logs/
+wandb/
+tensorboard/
+runs/
+lightning_logs/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Docker
+.dockerignore
+
+# Git
+.git/
+.gitattributes
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Sensitive Project Files
+private_notes.md
+TODO_HIDDEN.txt
+debug_*.py
+
+# Large Files
+*.tar.gz
+*.zip
+*.rar
+*.7z
+
+# Temporary Data
+temp/
+tmp/
+temp_*.txt
+debug_output/
