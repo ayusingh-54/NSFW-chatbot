@@ -4,14 +4,14 @@
 
 **This is the optimized version.** Training time reduced from 24-30 hours to **8-10 hours**. GPU requirements reduced from 25GB to **14GB VRAM**.
 
-| Metric | Original | Optimized | Savings |
-|--------|----------|-----------|---------|
-| Model Size | 34B | 13B | ↓ 62% |
-| VRAM Required | 25GB | 14GB | ↓ 44% |
-| Training Time | 24-30 hrs | 8-10 hrs | ↓ 67% |
-| Inference Speed | 2-3s/response | 1-2s/response | ↑ 50% |
-| GPU Compatibility | Enterprise GPUs | Consumer GPUs (3090 Ti) | ✅ |
-| Dataset Size | 100K samples | 100K samples | Same ✓ |
+| Metric            | Original        | Optimized               | Savings |
+| ----------------- | --------------- | ----------------------- | ------- |
+| Model Size        | 34B             | 13B                     | ↓ 62%   |
+| VRAM Required     | 25GB            | 14GB                    | ↓ 44%   |
+| Training Time     | 24-30 hrs       | 8-10 hrs                | ↓ 67%   |
+| Inference Speed   | 2-3s/response   | 1-2s/response           | ↑ 50%   |
+| GPU Compatibility | Enterprise GPUs | Consumer GPUs (3090 Ti) | ✅      |
+| Dataset Size      | 100K samples    | 100K samples            | Same ✓  |
 
 ---
 
@@ -58,6 +58,7 @@
 **We don't need to merge multiple 34B models anymore.**
 
 The 13B Llama-2-chat model is already excellent for roleplay:
+
 - ✅ Pre-fine-tuned for chat & instruction following
 - ✅ 2x faster training than 34B
 - ✅ Runs on consumer hardware
@@ -117,6 +118,7 @@ du -h custom_*.json lmsys*.json
 ```
 
 The notebook automatically:
+
 - ✅ Loads all 3 JSON files
 - ✅ Downloads BlueMoon 300K dataset from HF
 - ✅ Merges into single dataset
@@ -139,6 +141,7 @@ jupyter notebook nsfw_chatbot_production_v2.ipynb
 ### Step 2: Execute Cells in Order
 
 **Section 1-2:** Setup (5 minutes, run once)
+
 ```python
 # Cell 1: Install dependencies
 # Cell 2: Import libraries
@@ -146,6 +149,7 @@ jupyter notebook nsfw_chatbot_production_v2.ipynb
 ```
 
 **Section 3-6:** Configuration (2 minutes, just review)
+
 ```python
 # Cell 4: Security classes
 # Cell 5: Memory system
@@ -153,6 +157,7 @@ jupyter notebook nsfw_chatbot_production_v2.ipynb
 ```
 
 **Section 7-8:** Dataset Loading (10 minutes)
+
 ```python
 # Cell 7: Load and prepare datasets
 # Status: "Combined dataset size: ~85,000 samples"
@@ -426,18 +431,18 @@ docker run -p 7860:7860 nsfw-chatbot
 
 ## Comparison: Original vs Optimized
 
-| Feature | Original | Optimized |
-|---------|----------|-----------|
-| Model | 34B (Yi-34B) | 13B (Llama-2) |
-| Quantization | 4-bit | 8-bit |
-| GPU Required | A100 80GB ($25K) | RTX 4090 ($2K) |
-| Training Time | 24-30 hours | 8-10 hours |
-| Inference Speed | 2-3s | 1-2s |
-| Batch Size | 1 | 2 |
-| Epochs | 3 | 1 |
-| LoRA Rank | 64 | 32 |
-| Quality Loss | None | <5% (worth it) |
-| Recommendation | Enterprise | **Home Users** ✅ |
+| Feature         | Original         | Optimized         |
+| --------------- | ---------------- | ----------------- |
+| Model           | 34B (Yi-34B)     | 13B (Llama-2)     |
+| Quantization    | 4-bit            | 8-bit             |
+| GPU Required    | A100 80GB ($25K) | RTX 4090 ($2K)    |
+| Training Time   | 24-30 hours      | 8-10 hours        |
+| Inference Speed | 2-3s             | 1-2s              |
+| Batch Size      | 1                | 2                 |
+| Epochs          | 3                | 1                 |
+| LoRA Rank       | 64               | 32                |
+| Quality Loss    | None             | <5% (worth it)    |
+| Recommendation  | Enterprise       | **Home Users** ✅ |
 
 ---
 
